@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class BascketController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public AudioClip appleSE;
+    public AudioClip bombSE;
+    AudioSource aud;
     void Start()
     {
         Application.targetFrameRate = 60;
+        this.aud = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -24,5 +27,22 @@ public class BascketController : MonoBehaviour
                 transform.position = new Vector3(x, 0, z);
             }
         }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Apple")
+        {
+            Debug.Log("Apple！");
+            this.aud.PlayOneShot(this.appleSE);
+
+        }
+        if (other.gameObject.tag == "Bomb")
+        {
+            Debug.Log("Bomb！");
+            this.aud.PlayOneShot(this.bombSE);
+
+        }
+        //Debug.Log("キャッチ！");
+        Destroy(other.gameObject);
     }
 }
