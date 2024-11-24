@@ -7,10 +7,12 @@ public class BascketController : MonoBehaviour
     public AudioClip appleSE;
     public AudioClip bombSE;
     AudioSource aud;
+    GameObject director;
     void Start()
     {
         Application.targetFrameRate = 60;
         this.aud = GetComponent<AudioSource>();
+        this.director = GameObject.Find("GameDirector");
     }
 
     // Update is called once per frame
@@ -34,12 +36,14 @@ public class BascketController : MonoBehaviour
         {
             Debug.Log("Apple！");
             this.aud.PlayOneShot(this.appleSE);
+            this.director.GetComponent<GameDirector>().GetApple();
 
         }
         if (other.gameObject.tag == "Bomb")
         {
             Debug.Log("Bomb！");
             this.aud.PlayOneShot(this.bombSE);
+            this.director.GetComponent<GameDirector>().GetBomb();
 
         }
         //Debug.Log("キャッチ！");

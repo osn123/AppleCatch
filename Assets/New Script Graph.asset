@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95e66c6366d904e98bc83428217d4fd7, type: 3}
+  m_Name: New Script Graph
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"graph":{"variables":{"Kind":"Flow","collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":null,"summary":null,"pan":{"x":-150.0,"y":-194.4},"zoom":1.0,"elements":[{"coroutine":false,"defaultValues":{},"position":{"x":-271.0,"y":-384.0},"guid":"e6f4dee3-1116-4431-8488-dc9001b73e32","$version":"A","$type":"Unity.VisualScripting.Start","$id":"9"},{"chainable":false,"parameterNames":["message"],"member":{"name":"Log","parameterTypes":["System.Object"],"targetType":"UnityEngine.Debug","targetTypeName":"UnityEngine.Debug","$version":"A"},"defaultValues":{},"position":{"x":-4.0,"y":-328.0},"guid":"61211fa6-72c0-44f9-a624-da54c4a7101c","$version":"A","$type":"Unity.VisualScripting.InvokeMember","$id":"11"},{"type":"System.String","value":{"$content":"helloWorld","$type":"System.String"},"defaultValues":{},"position":{"x":-436.0,"y":-220.0},"guid":"69fedd85-0760-4a81-90fb-12d8440f93e1","$version":"A","$type":"Unity.VisualScripting.Literal"},{"specifyFallback":false,"kind":"Object","defaultValues":{"name":{"$content":"test","$type":"System.String"},"object":null},"position":{"x":-216.0,"y":-71.0},"guid":"82214b79-e639-413c-9e59-a74085920280","$version":"A","$type":"Unity.VisualScripting.GetVariable","$id":"17"},{"specifyFallback":false,"kind":"Object","defaultValues":{"name":{"$content":"","$type":"System.String"},"object":null},"position":{"x":-248.0,"y":-228.0},"guid":"64c62eb9-144f-418a-ba14-25cdf09a19b7","$version":"A","$type":"Unity.VisualScripting.GetVariable"},{"sourceUnit":{"$ref":"9"},"sourceKey":"trigger","destinationUnit":{"$ref":"11"},"destinationKey":"enter","guid":"62c9c23b-1dc3-4422-aa82-9d3dc2e4f0a4","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"17"},"sourceKey":"value","destinationUnit":{"$ref":"11"},"destinationKey":"%message","guid":"c5b5cb93-bed7-4970-9be6-1758d4c7163d","$type":"Unity.VisualScripting.ValueConnection"}],"$version":"A"}}'
+    _objectReferences: []
