@@ -11,11 +11,6 @@ public class ItemGenerator : MonoBehaviour
     int ratio = 2;
     float speed = -0.03f;
 
-    void Start()
-    {
-
-    }
-
     void Update()
     {
         this.delta += Time.deltaTime;

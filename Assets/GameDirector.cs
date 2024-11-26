@@ -1,24 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class GameDirector : MonoBehaviour
 {
     GameObject timerText;
     GameObject pointText;
-
     GameObject generator;
 
     float time = 30.0f;
     int point = 0;
-
 
     void Start()
     {
         this.timerText = GameObject.Find("TimeText (TMP)");
         this.pointText = GameObject.Find("PointText (TMP)");
         this.generator = GameObject.Find("ItemGenerator");
+        //print("GameScene");
     }
     void Update()
     {
@@ -27,7 +27,11 @@ public class GameDirector : MonoBehaviour
         if (this.time < 0)
         {
             this.time = 0;
-            this.generator.GetComponent<ItemGenerator>().SetParameter(10000.0f, 0, 0);
+
+            SceneManager.LoadScene(0);
+            PlayerPrefs.SetInt("AppleCatchHiScore", this.point);
+
+            //this.generator.GetComponent<ItemGenerator>().SetParameter(1000.0f, 0, 0);
         }
         else if (0 <= this.time && this.time < 4)
         {
@@ -45,7 +49,6 @@ public class GameDirector : MonoBehaviour
         {
             this.generator.GetComponent<ItemGenerator>().SetParameter(1.0f, -0.03f, 2);
         }
-
         this.timerText.GetComponent<TextMeshProUGUI>().text = this.time.ToString("F1");
         this.pointText.GetComponent<TextMeshProUGUI>().text = this.point.ToString() + " point";
     }

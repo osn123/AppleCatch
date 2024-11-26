@@ -15,7 +15,6 @@ public class BascketController : MonoBehaviour
         this.director = GameObject.Find("GameDirector");
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -37,14 +36,12 @@ public class BascketController : MonoBehaviour
             Debug.Log("Apple！");
             this.aud.PlayOneShot(this.appleSE);
             this.director.GetComponent<GameDirector>().GetApple();
-
         }
         if (other.gameObject.tag == "Bomb")
         {
             Debug.Log("Bomb！");
             this.aud.PlayOneShot(this.bombSE);
             this.director.GetComponent<GameDirector>().GetBomb();
-
         }
         //Debug.Log("キャッチ！");
         Destroy(other.gameObject);
